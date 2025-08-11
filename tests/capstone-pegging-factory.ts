@@ -20,8 +20,8 @@ describe("capstone-pegging-factory", () => {
   const tokenProgram = anchor.utils.token.TOKEN_PROGRAM_ID;
 
   let config: anchor.web3.PublicKey;
-  // let tokenMint: anchor.web3.PublicKey; // This is the main token we are pegging to, like USDC
-  let tokenMint = new anchor.web3.PublicKey("5xWuUaw5PnFDK6NqRdED9x5tSG3tCi7y8pBArQkgsVZP"); // This is the main token we are pegging to, like USDC
+  let tokenMint: anchor.web3.PublicKey; // This is the main token we are pegging to, like USDC
+  // let tokenMint = new anchor.web3.PublicKey("5xWuUaw5PnFDK6NqRdED9x5tSG3tCi7y8pBArQkgsVZP"); // This is the main token we are pegging to, like USDC
   let platformMint: anchor.web3.PublicKey;
   let treasury: anchor.web3.PublicKey;
   let platformPeg: anchor.web3.PublicKey;
@@ -37,7 +37,7 @@ describe("capstone-pegging-factory", () => {
 
   before(async () => {
 
-    // tokenMint = await createMintandMintSupply();
+    tokenMint = await createMintandMintSupply();
 
     // Get the Config PDA
     [config] = anchor.web3.PublicKey.findProgramAddressSync(
